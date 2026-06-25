@@ -68,6 +68,104 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Philosophy Section */}
+      <section className="py-32 px-6 md:px-12 bg-background relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-6 flex flex-col items-center"
+          >
+             <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-olive mb-6">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+             </svg>
+            <h2 className="font-serif text-4xl md:text-5xl text-forest mb-6">
+              You don&apos;t need fixing.
+            </h2>
+          </motion.div>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="font-sans text-lg md:text-xl text-forest/80 leading-relaxed mb-20 max-w-2xl mx-auto"
+          >
+            Most healing approaches ask us to become someone new. We believe healing begins when nothing needs to be forced. When your nervous system finally feels safe enough to soften.
+          </motion.p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              { title: "Awareness", desc: "Observing without judgment.", delay: 0.3 },
+              { title: "Compassion", desc: "Holding space for what is.", delay: 0.4 },
+              { title: "Integration", desc: "Returning home to the body.", delay: 0.5 }
+            ].map((pillar) => (
+              <motion.div 
+                key={pillar.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: pillar.delay }}
+                className="flex flex-col items-center"
+              >
+                <div className="w-px h-12 bg-forest/20 mb-6" />
+                <h3 className="font-sans font-medium tracking-[0.1em] uppercase text-sm text-forest mb-3">{pillar.title}</h3>
+                <p className="font-sans text-forest/70 text-sm leading-relaxed max-w-[200px]">{pillar.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Instagram Section */}
+      <section className="py-20 px-4 md:px-8 bg-beige/50 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col items-center text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl text-forest mb-4">
+              Join the <span className="font-script text-5xl text-gold">Movement</span>
+            </h2>
+            <p className="font-sans tracking-[0.1em] text-xs uppercase text-forest/70">
+              @wellnessfamily
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&q=80&w=800",
+              "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?auto=format&fit=crop&q=80&w=800",
+              "https://images.unsplash.com/photo-1512438248247-f0f2a5a8b7f0?auto=format&fit=crop&q=80&w=800",
+              "https://images.unsplash.com/photo-1600618528240-fb9fc964b853?auto=format&fit=crop&q=80&w=800"
+            ].map((src, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                className="aspect-square relative overflow-hidden group cursor-pointer"
+              >
+                <img 
+                  src={src} 
+                  alt="Instagram feed image placeholder" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-forest/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8 text-sand">
+                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                   </svg>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          
+          <div className="flex justify-center mt-12">
+            <Button variant="outline" className="border-forest text-forest hover:bg-forest hover:text-sand">
+              Follow Us
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Footer Banner (Dark Green) */}
       <section className="bg-forest text-beige py-12 px-6 flex flex-col items-center justify-center text-center relative z-20">
         <div className="w-6 h-6 mb-6">
