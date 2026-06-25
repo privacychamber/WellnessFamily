@@ -1,5 +1,5 @@
 import { HomepageUI } from "@/components/pages/HomepageUI";
-import { client } from "@/sanity/lib/client";
+import { client } from "../../sanity/lib/client";
 
 export const revalidate = 0; // Disable cache for immediate updates during dev
 
