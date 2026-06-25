@@ -2,163 +2,91 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { PremiumCard } from "@/components/ui/PremiumCard";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Placeholder for Cinematic Video/Image background */}
-        <div className="absolute inset-0 bg-[#e5d9c5]/20 z-0" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background z-0" />
+    <div className="flex flex-col min-h-screen bg-background">
+      
+      {/* Hero Section - Split Layout */}
+      <section className="relative min-h-[90vh] flex flex-col md:flex-row">
         
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-6 mt-20">
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="font-serif text-5xl md:text-7xl text-forest leading-tight mb-8"
-          >
-            Healing begins the moment you no longer have to carry everything alone.
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="font-sans text-lg md:text-xl text-forest/80 mb-12 max-w-2xl mx-auto leading-relaxed"
-          >
-            Through sound healing, breathwork, yoga, emotional integration, and compassionate guidance, Wellness Family helps people reconnect with themselves naturally.
-          </motion.p>
+        {/* Left Column (Text) */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center px-8 md:px-20 lg:px-32 py-20 z-10">
           <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="mb-16 flex flex-col items-center md:items-start"
+          >
+            {/* Logo Placeholder */}
+            <div className="w-12 h-12 border border-forest rounded-full flex items-center justify-center mb-4">
+               <span className="text-forest text-xs">WF</span>
+            </div>
+            <h2 className="text-forest tracking-[0.2em] text-sm md:text-base font-medium mb-2 uppercase">Wellness Family</h2>
+            <p className="text-forest/70 tracking-[0.1em] text-xs max-w-xs md:max-w-sm uppercase text-center md:text-left leading-relaxed">
+              A Global Wellness Movement<br/>for Mind, Body & Inner Peace
+            </p>
+          </motion.div>
+
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-            className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
+            transition={{ duration: 1, delay: 0.2 }}
           >
-            <Button size="lg">Book Your Free Intro Session</Button>
-            <Button variant="ghost" size="lg">Explore Healing Paths</Button>
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-forest leading-[1.1] mb-6">
+              You don&apos;t<br />have to hold<br />everything<br />
+              <span className="font-script text-6xl md:text-7xl lg:text-8xl text-olive relative -left-2 block mt-2">inside.</span>
+            </h1>
+            
+            <div className="w-8 h-px bg-forest/30 mb-8" />
+            
+            <p className="font-sans text-sm tracking-[0.2em] text-forest mb-12 uppercase leading-loose">
+              Release. Heal. Return.<br/>To You.
+            </p>
+
+            {/* Decorative Leaves/Icon Placeholder */}
+            <div className="w-16 h-8 text-olive opacity-80 mb-12">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-full h-full">
+                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+               </svg>
+            </div>
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 text-forest/50"
-        >
-          <span className="text-xs uppercase tracking-widest font-sans">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-forest/50 to-transparent" />
-        </motion.div>
-      </section>
-
-      {/* Emotional Recognition Section */}
-      <section className="py-32 px-6 md:px-12 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-serif text-4xl md:text-5xl text-forest text-center mb-20"
-          >
-            Maybe you&apos;ve been feeling...
-          </motion.h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <PremiumCard 
-              title="Exhausted" 
-              description="&quot;I'm always tired, even when I sleep. I've lost my spark.&quot;" 
-              className="bg-[#f5f1e7]"
-            />
-            <PremiumCard 
-              title="Overwhelmed" 
-              description="&quot;I can't switch my mind off. I've tried everything.&quot;" 
-              className="bg-[#e5d9c5]/50"
-            />
-            <PremiumCard 
-              title="Disconnected" 
-              description="&quot;I smile, but I don't really feel alive anymore.&quot;" 
-              className="bg-[#8f9e8b]/20"
+        {/* Right Column (Image) */}
+        <div className="w-full md:w-1/2 relative min-h-[50vh] md:min-h-full bg-sand">
+          {/* Placeholder for the hero image (woman sitting with bowls) */}
+          <div className="absolute inset-0 bg-[#d8d0bc] object-cover mix-blend-multiply flex items-center justify-center">
+            <img 
+              src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?auto=format&fit=crop&q=80&w=2000" 
+              alt="Woman sitting peacefully"
+              className="w-full h-full object-cover opacity-80"
             />
           </div>
+          {/* Gradient overlay to blend image edge into the background on mobile if needed */}
+          <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-background via-background/20 to-transparent pointer-events-none" />
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section className="py-32 px-6 md:px-12 bg-[#f5f1e7]">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-serif text-4xl md:text-5xl text-forest mb-10"
-          >
-            You don&apos;t need fixing.
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="font-sans text-xl text-forest/80 leading-relaxed mb-20"
-          >
-            Most healing approaches ask us to become someone new. We believe healing begins when nothing needs to be forced. When your nervous system finally feels safe enough to soften.
-          </motion.p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {[
-              { title: "Awareness", desc: "Observing without judgment." },
-              { title: "Compassion", desc: "Holding space for what is." },
-              { title: "Integration", desc: "Returning home to the body." }
-            ].map((pillar, i) => (
-              <motion.div 
-                key={pillar.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + (i * 0.1) }}
-                className="flex flex-col items-center"
-              >
-                <div className="w-16 h-16 rounded-full border border-forest/20 flex items-center justify-center mb-6">
-                  <span className="font-serif text-2xl text-forest">{i + 1}</span>
-                </div>
-                <h3 className="font-sans font-medium text-xl text-forest mb-3">{pillar.title}</h3>
-                <p className="font-sans text-forest/70">{pillar.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+      {/* Footer Banner (Dark Green) */}
+      <section className="bg-forest text-beige py-12 px-6 flex flex-col items-center justify-center text-center relative z-20">
+        <div className="w-6 h-6 mb-6">
+           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-gold w-full h-full">
+             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+           </svg>
+        </div>
+        <p className="font-sans tracking-[0.2em] text-xs md:text-sm uppercase mb-4 text-beige/90">
+          This is a space to exhale, release & return to you.
+        </p>
+        <div className="flex items-center gap-4 w-full max-w-md mx-auto opacity-70">
+          <div className="h-px bg-gold flex-1" />
+          <p className="font-sans tracking-[0.2em] text-xs md:text-sm uppercase text-gold">
+            You are safe here.
+          </p>
+          <div className="h-px bg-gold flex-1" />
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-40 px-6 bg-background flex flex-col items-center justify-center text-center">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="font-serif text-4xl md:text-6xl text-forest mb-8 leading-tight max-w-3xl"
-        >
-          Maybe nothing is wrong with you.
-        </motion.h2>
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="font-sans text-xl text-forest/70 mb-12 max-w-xl"
-        >
-          Maybe you&apos;ve simply been carrying too much for too long.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-        >
-          <Button size="lg">Book Your Free Intro Session</Button>
-        </motion.div>
-      </section>
     </div>
   );
 }
