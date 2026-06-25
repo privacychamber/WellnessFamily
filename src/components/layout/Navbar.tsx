@@ -7,9 +7,9 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 const NAV_LINKS = [
-  { label: "About", href: "/#about" },
-  { label: "Healing Paths", href: "/#healing-paths" },
-  { label: "Retreats", href: "/#retreats" },
+  { label: "About", href: "/about" },
+  { label: "Healing Paths", href: "/paths" },
+  { label: "Retreats", href: "/retreats" },
 ];
 
 export function Navbar() {
