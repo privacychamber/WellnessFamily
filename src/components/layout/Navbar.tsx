@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { label: "About", href: "/about" },
   { label: "Healing Paths", href: "/paths" },
   { label: "Retreats", href: "/retreats" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {

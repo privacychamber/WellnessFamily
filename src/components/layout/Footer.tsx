@@ -17,10 +17,10 @@ export function Footer() {
         {/* Links */}
         <div className="col-span-1 flex flex-col space-y-4">
           <h4 className="font-sans text-sm tracking-widest uppercase text-[#f5f1e7]/50 mb-2">Explore</h4>
-          <Link href="/#about" className="font-sans text-sm hover:text-sage transition-colors">About Parvin</Link>
-          <Link href="/#healing-paths" className="font-sans text-sm hover:text-sage transition-colors">Healing Paths</Link>
-          <Link href="/#retreats" className="font-sans text-sm hover:text-sage transition-colors">Retreats</Link>
-          <Link href="/#contact" className="font-sans text-sm hover:text-sage transition-colors">Contact</Link>
+          <Link href="/about" className="font-sans text-sm hover:text-sage transition-colors">About Parvin</Link>
+          <Link href="/paths" className="font-sans text-sm hover:text-sage transition-colors">Healing Paths</Link>
+          <Link href="/retreats" className="font-sans text-sm hover:text-sage transition-colors">Retreats</Link>
+          <Link href="/contact" className="font-sans text-sm hover:text-sage transition-colors">Contact</Link>
         </div>
 
         {/* Community */}
