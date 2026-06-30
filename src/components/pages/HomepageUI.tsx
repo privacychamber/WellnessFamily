@@ -2,14 +2,13 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { urlFor } from "../../../sanity/lib/image";
 
 export function HomepageUI({ data }: { data: any }) {
   // Use Sanity data or fallback to defaults
   const headline = data?.heroHeadline || "You don't\nhave to hold\neverything\n";
   const scriptWord = data?.heroScriptWord || "inside.";
   const subtitle = data?.heroSubtitle || "A Global Wellness Movement\nfor Mind, Body & Inner Peace";
-  const imageUrl = data?.heroImage ? urlFor(data.heroImage).url() : "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?auto=format&fit=crop&q=80&w=2000";
+  const imageUrl = data?.heroImage || "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?auto=format&fit=crop&q=80&w=2000";
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
