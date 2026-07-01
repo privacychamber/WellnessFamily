@@ -49,13 +49,24 @@ export function AdminSidebar() {
         })}
       </nav>
       
-      <div className="p-4 border-t border-zinc-800">
+      <div className="p-4 border-t border-zinc-800 space-y-3">
         <Link 
           href="/" 
           className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors"
         >
           &larr; Back to Website
         </Link>
+        <button
+          onClick={async () => {
+            const res = await fetch('/api/auth/logout', { method: 'POST' });
+            if (res.ok) {
+              window.location.href = '/admin/login';
+            }
+          }}
+          className="w-full text-left text-sm text-zinc-400 hover:text-red-400 transition-colors flex items-center gap-2"
+        >
+          Log Out
+        </button>
       </div>
     </div>
   );
