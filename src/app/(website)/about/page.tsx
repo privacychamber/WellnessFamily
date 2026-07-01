@@ -1,8 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
+import fs from "fs";
+import path from "path";
+
+export const dynamic = 'force-dynamic';
 
 export default function AboutPage() {
+  const contentPath = path.join(process.cwd(), "src", "data", "content.json");
+  const fullData = JSON.parse(fs.readFileSync(contentPath, "utf-8"));
+  const aboutData = fullData.about || {};
+
   return (
     <div className="flex flex-col min-h-screen bg-background">
       
@@ -43,12 +51,12 @@ export default function AboutPage() {
             </div>
 
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-forest leading-none mb-2">
-              Meet
-              <span className="font-script text-6xl md:text-7xl lg:text-8xl text-gold block mt-2 -ml-4">Parvin</span>
+              {aboutData.title || "Meet"}
+              <span className="font-script text-6xl md:text-7xl lg:text-8xl text-gold block mt-2 -ml-4">{aboutData.scriptTitle || "Parvin"}</span>
             </h1>
             
             <p className="font-sans text-lg text-forest/90 mt-8 max-w-sm leading-relaxed">
-              Dedicated to helping you release, heal and return to your true self.
+              {aboutData.description || "Dedicated to helping you release, heal and return to your true self."}
             </p>
           </motion.div>
 
@@ -88,7 +96,7 @@ export default function AboutPage() {
           {/* Placeholder for Parvin's Portrait */}
           <div className="absolute inset-0 bg-[#d8d0bc] flex items-center justify-center">
             <img 
-              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=2000" 
+              src={aboutData.image || "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=2000"} 
               alt="Portrait of Parvin"
               className="w-full h-full object-cover"
             />

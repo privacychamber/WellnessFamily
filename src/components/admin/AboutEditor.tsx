@@ -3,14 +3,14 @@
 import { useState, useEffect } from 'react';
 import { Save, Loader2, AlertCircle, CheckCircle2 } from 'lucide-react';
 
-export function ContentEditor() {
+export function AboutEditor() {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   useEffect(() => {
-    fetch('/api/content?page=homepage')
+    fetch('/api/content?page=about')
       .then(res => res.json())
       .then(json => {
         setData(json);
@@ -31,7 +31,7 @@ export function ContentEditor() {
     setSaving(true);
     setStatus('idle');
     try {
-      const res = await fetch('/api/content?page=homepage', {
+      const res = await fetch('/api/content?page=about', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -70,57 +70,56 @@ export function ContentEditor() {
   return (
     <div className="max-w-4xl space-y-8 bg-white p-8 rounded-2xl shadow-sm border border-zinc-100">
       <div>
-        <h3 className="text-xl font-semibold text-zinc-900 mb-1">Homepage Content</h3>
-        <p className="text-zinc-500 text-sm">Update the text and imagery displayed on the main landing page.</p>
+        <h3 className="text-xl font-semibold text-zinc-900 mb-1">About Page Content</h3>
+        <p className="text-zinc-500 text-sm">Update the biography and information on the About page.</p>
       </div>
 
       <div className="space-y-6">
         <div>
-          <label className="block text-sm font-medium text-zinc-700 mb-2">Hero Headline</label>
-          <textarea
-            value={data.heroHeadline || ''}
-            onChange={(e) => handleChange('heroHeadline', e.target.value)}
-            rows={4}
+          <label className="block text-sm font-medium text-zinc-700 mb-2">Headline</label>
+          <input
+            type="text"
+            value={data.title || ''}
+            onChange={(e) => handleChange('title', e.target.value)}
             className="w-full px-4 py-2 border border-zinc-200 rounded-lg focus:ring-2 focus:ring-black focus:border-black outline-none transition-all"
-            placeholder="Main headline text..."
+            placeholder="Meet"
           />
-          <p className="text-xs text-zinc-400 mt-1">Use newlines (Enter) to control text wrapping.</p>
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-zinc-700 mb-2">Hero Script Word</label>
+          <label className="block text-sm font-medium text-zinc-700 mb-2">Stylized Name</label>
           <input
             type="text"
-            value={data.heroScriptWord || ''}
-            onChange={(e) => handleChange('heroScriptWord', e.target.value)}
+            value={data.scriptTitle || ''}
+            onChange={(e) => handleChange('scriptTitle', e.target.value)}
             className="w-full px-4 py-2 border border-zinc-200 rounded-lg focus:ring-2 focus:ring-black focus:border-black outline-none transition-all"
-            placeholder="The stylized word at the end..."
+            placeholder="Parvin"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-zinc-700 mb-2">Hero Subtitle</label>
+          <label className="block text-sm font-medium text-zinc-700 mb-2">Description</label>
           <textarea
-            value={data.heroSubtitle || ''}
-            onChange={(e) => handleChange('heroSubtitle', e.target.value)}
-            rows={2}
+            value={data.description || ''}
+            onChange={(e) => handleChange('description', e.target.value)}
+            rows={4}
             className="w-full px-4 py-2 border border-zinc-200 rounded-lg focus:ring-2 focus:ring-black focus:border-black outline-none transition-all"
-            placeholder="Subtitle text..."
+            placeholder="Dedicated to helping you release..."
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-zinc-700 mb-2">Hero Background Image URL</label>
+          <label className="block text-sm font-medium text-zinc-700 mb-2">Portrait Image URL</label>
           <input
             type="text"
-            value={data.heroImage || ''}
-            onChange={(e) => handleChange('heroImage', e.target.value)}
+            value={data.image || ''}
+            onChange={(e) => handleChange('image', e.target.value)}
             className="w-full px-4 py-2 border border-zinc-200 rounded-lg focus:ring-2 focus:ring-black focus:border-black outline-none transition-all"
             placeholder="https://..."
           />
-          {data.heroImage && (
-            <div className="mt-4 rounded-lg overflow-hidden border border-zinc-200 h-48 relative">
-              <img src={data.heroImage} alt="Hero Preview" className="object-cover w-full h-full" />
+          {data.image && (
+            <div className="mt-4 rounded-lg overflow-hidden border border-zinc-200 h-48 relative max-w-sm">
+              <img src={data.image} alt="Portrait Preview" className="object-cover w-full h-full" />
             </div>
           )}
         </div>

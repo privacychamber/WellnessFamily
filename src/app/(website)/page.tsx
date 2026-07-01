@@ -6,7 +6,8 @@ export const dynamic = 'force-dynamic';
 
 export default function Home() {
   const contentPath = path.join(process.cwd(), "src", "data", "content.json");
-  const homepageData = JSON.parse(fs.readFileSync(contentPath, "utf-8"));
+  const fullData = JSON.parse(fs.readFileSync(contentPath, "utf-8"));
+  const homepageData = fullData.homepage;
   
   return <HomepageUI data={homepageData} />;
 }

@@ -1,6 +1,18 @@
 {
-  "heroSubtitle": "A Global Wellness Movement\nfor Mind, Body & Inner Peace",
-  "heroHeadline": "You don't\nhave to hold\neverything\n",
-  "heroScriptWord": "inside.",
-  "heroImage": "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?auto=format&fit=crop&q=80&w=2000"
+  "homepage": {
+    "heroSubtitle": "A Global Wellness Movement\nfor Mind, Body & Inner Peace",
+    "heroHeadline": "You don't\nhave to hold\neverything\n",
+    "heroScriptWord": "inside.",
+    "heroImage": "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?auto=format&fit=crop&q=80&w=2000"
+  },
+  "about": {
+    "title": "Meet",
+    "scriptTitle": "Parvin",
+    "description": "Dedicated to helping you release, heal and return to your true self.",
+    "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=2000"
+  },
+  "settings": {
+    "siteName": "Wellness Family",
+    "seoDescription": "A Global Wellness Movement for Mind, Body & Inner Peace."
+  }
 }

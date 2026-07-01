@@ -11,6 +11,7 @@ export function AdminSidebar() {
   const links = [
     { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
     { name: 'Homepage Content', href: '/admin/homepage', icon: Home },
+    { name: 'About Page', href: '/admin/about', icon: Home },
     { name: 'Images', href: '/admin/images', icon: ImageIcon },
     { name: 'Settings', href: '/admin/settings', icon: Settings },
   ];
