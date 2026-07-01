@@ -40,6 +40,7 @@ export async function saveContent(data: any) {
       await put('content.json', JSON.stringify(data, null, 2), {
         access: 'public',
         addRandomSuffix: false,
+        allowOverwrite: true,
       });
       return;
     } catch (error) {
