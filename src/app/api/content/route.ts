@@ -1,15 +1,12 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
-
-const contentPath = path.join(process.cwd(), 'src', 'data', 'content.json');
+import { getContent, saveContent } from '@/lib/content';
 
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const page = searchParams.get('page');
     
-    const data = JSON.parse(fs.readFileSync(contentPath, 'utf-8'));
+    const data = await getContent();
     
     if (page && data[page]) {
       return NextResponse.json(data[page]);
@@ -27,7 +24,7 @@ export async function POST(request: Request) {
     const page = searchParams.get('page');
     const body = await request.json();
     
-    const existingData = JSON.parse(fs.readFileSync(contentPath, 'utf-8'));
+    const existingData = await getContent();
     
     if (page) {
       existingData[page] = body;
@@ -36,7 +33,7 @@ export async function POST(request: Request) {
       Object.assign(existingData, body);
     }
     
-    fs.writeFileSync(contentPath, JSON.stringify(existingData, null, 2), 'utf-8');
+    await saveContent(existingData);
     
     return NextResponse.json({ success: true, data: body });
   } catch (error) {
