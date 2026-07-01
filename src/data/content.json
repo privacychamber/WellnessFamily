@@ -11,6 +11,65 @@
     "description": "Dedicated to helping you release, heal and return to your true self.",
     "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=2000"
   },
+  "paths": {
+    "title": "Healing Paths.",
+    "description": "Gentle, compassionate guidance designed to help your nervous system regulate, bringing you back to yourself.",
+    "services": [
+      {
+        "title": "Free 30-Minute Intro Session",
+        "description": "A gentle conversation to see if we are a good fit. No pressure, no sales pitches. Just a safe space to share where you're at.",
+        "buttonText": "Book Now"
+      },
+      {
+        "title": "Mind, Heart & Ease",
+        "description": "A €100 single session focused on immediate emotional integration and nervous system regulation using breathwork and awareness.",
+        "buttonText": "Schedule Session"
+      },
+      {
+        "title": "Spiritual Awakening Guidance",
+        "description": "For those feeling confused, disconnected, or overwhelmed by a spiritual awakening. We ground the experience back into the body.",
+        "buttonText": "Learn More"
+      },
+      {
+        "title": "Four Month Journey",
+        "description": "A €4,500 immersive container. We work closely together to completely rewire how your nervous system responds to life.",
+        "buttonText": "Apply Now"
+      }
+    ],
+    "soundHealingTitle": "Sound Healing",
+    "soundHealingDescription": "Immerse yourself in frequencies designed to bypass the analytical mind. Sound healing drops you directly into parasympathetic rest, allowing deep emotional release without you having to 'do' anything.",
+    "soundHealingButtonText": "Explore Sound Baths"
+  },
+  "retreats": {
+    "title": "Retreats.",
+    "description": "Step away from the noise. Our luxury retreats are designed to offer profound rest, human connection, and emotional safety in nature.",
+    "retreatsList": [
+      {
+        "title": "The Silent Mountain Retreat",
+        "description": "A 5-day immersive experience in the Swiss Alps. Focus on silence, breathwork, and nervous system regulation. Luxury private cabins, organic meals, and daily guided integration.",
+        "date": "OCTOBER 2026",
+        "buttonText": "Join Waitlist"
+      },
+      {
+        "title": "Ocean Renewal",
+        "description": "A 7-day gathering on the coast of Portugal. Blending gentle yoga, intensive sound healing baths, and community connection. Relearn how to feel joy without guilt.",
+        "date": "MARCH 2027",
+        "buttonText": "Join Waitlist"
+      }
+    ],
+    "testimonial": "\"I didn't know how exhausted I was until I finally stopped. Wellness Family didn't try to fix me; they just gave me the absolute safest place to finally rest.\"",
+    "testimonialAuthor": "— Sarah M."
+  },
+  "contact": {
+    "title": "Get in Touch.",
+    "description": "We would love to hear from you. Reach out to schedule a session, ask a question, or simply connect.",
+    "formTitle": "Send a Message",
+    "sanctuaryTitle": "Our Sanctuary",
+    "sanctuaryDescription": "Experience deep healing and return to yourself in a space designed for safety, peace, and integration.",
+    "locationTitle": "Location",
+    "locationDescription": "Find our physical location and immerse yourself in a healing environment.",
+    "googleMapsUrl": "https://maps.app.goo.gl/W6eLZax5QpagoDKs6"
+  },
   "settings": {
     "siteName": "Wellness Family",
     "seoDescription": "A Global Wellness Movement for Mind, Body & Inner Peace."

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Image as ImageIcon, Settings, LayoutDashboard } from 'lucide-react';
+import { Home, Image as ImageIcon, Settings, LayoutDashboard, User, Compass, Sparkles, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function AdminSidebar() {
@@ -10,8 +10,11 @@ export function AdminSidebar() {
 
   const links = [
     { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
-    { name: 'Homepage Content', href: '/admin/homepage', icon: Home },
-    { name: 'About Page', href: '/admin/about', icon: Home },
+    { name: 'Homepage', href: '/admin/homepage', icon: Home },
+    { name: 'About Page', href: '/admin/about', icon: User },
+    { name: 'Healing Paths', href: '/admin/paths', icon: Compass },
+    { name: 'Retreats Page', href: '/admin/retreats', icon: Sparkles },
+    { name: 'Contact Page', href: '/admin/contact', icon: Mail },
     { name: 'Images', href: '/admin/images', icon: ImageIcon },
     { name: 'Settings', href: '/admin/settings', icon: Settings },
   ];
