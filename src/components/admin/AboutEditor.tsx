@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Save, Loader2, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { ImageUploader } from './ImageUploader';
 
 export function AboutEditor() {
   const [data, setData] = useState<any>(null);
@@ -109,19 +110,11 @@ export function AboutEditor() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-zinc-700 mb-2">Portrait Image URL</label>
-          <input
-            type="text"
+          <ImageUploader
             value={data.image || ''}
-            onChange={(e) => handleChange('image', e.target.value)}
-            className="w-full px-4 py-2 border border-zinc-200 rounded-lg focus:ring-2 focus:ring-black focus:border-black outline-none transition-all"
-            placeholder="https://..."
+            onChange={(url) => handleChange('image', url)}
+            label="Portrait Image"
           />
-          {data.image && (
-            <div className="mt-4 rounded-lg overflow-hidden border border-zinc-200 h-48 relative max-w-sm">
-              <img src={data.image} alt="Portrait Preview" className="object-cover w-full h-full" />
-            </div>
-          )}
         </div>
       </div>
 
